@@ -1,9 +1,11 @@
 import math
+import numpy as np
 
 ROW=9
 COL=9
 
-puzzle= [[0]*ROW]*COL
+puzzle= np.zeros((9,9))
+#print (puzzle)
 
 def printPuzzle():
     rowCount=0
@@ -11,7 +13,7 @@ def printPuzzle():
         colCount=0
         for num in row:
             colCount+=1
-            print ('{:4}'.format(num), end='')
+            print (f'{num:4g}', end='')
             if colCount%3==0 & colCount<9: print ('|', end='')
             if colCount==9: print()
         rowCount+=1
@@ -43,7 +45,8 @@ def canBeAdded(x,y,num):
 
 def changeNum(x, y, num):
     if num != 0 & canBeAdded(x,y,num):
-        puzzle[int(x)][int(y)]=num
+        puzzle[int(x)][int(y)]=int(num)
+        #print(puzzle)
     
 
 while  not solved():
