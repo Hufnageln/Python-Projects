@@ -1,3 +1,6 @@
+#Noah Hufnagel
+#Sudoku Game, Text Based
+
 import math
 import numpy as np
 
