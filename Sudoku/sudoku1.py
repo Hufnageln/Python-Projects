@@ -54,6 +54,7 @@ def changeNum(x, y, num):
 
 while  not solved():
     printPuzzle()
-    print('add/change a number (x y number): ', end=' ')
+    print('add/change a number (x y number) or type stop to exit: ', end=' ')
     recieved= input().split(' ')
-    changeNum(recieved[0], recieved[1], recieved[2])
+    if( len(recieved)==3): changeNum(recieved[0], recieved[1], recieved[2])
+    elif (recieved[0].lower()=="stop"): break
